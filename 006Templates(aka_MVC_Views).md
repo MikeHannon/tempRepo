@@ -1,16 +1,19 @@
-# The Real Views of Django
+#The Real Views of Django
 
-Ok remember - and I can't emphasize this enough!!!
+###The following can't be emphasized enough:
+* Django **Models** is the **MODEL** in MVC (easy enough)
+* Django **Templates** (living in `templates` directory) is the **VIEW** in MVC
+* Django Views (living in `views.py`) is the **CONTROLLER** in MVC
 
-The Django Models is the M in MVC.
+Traditional MVC | Stands For | Django MTV | Stands For | Role
+--- | --- | --- | --- | --- |
+**M** | **Model** | **M** | **Model** | Performs heavy logic, queries database
+*V* | *View* | *T* | *Template* | Holds HTML (plus any Python code) that will be rendered and sent to browser
+**C** | **Controller** | **V** | **View** | Receives an HTTP request from `routes.py` and decides what to do (i.e. redirect, call a model method, render some HTML)
 
-The Dango views.py file is the CONTROLLER in MVC.
+That means if someone -- friend, family member, *potential employer* -- asks you whether you're familiar with MVC architecture, you should be be able to respond with an emphatic **YES** and explain the role of each piece.
 
-The Django templates folder is the VIEWS in MVC.
-
-
-So if after this section is over, and someone asks you - are you familiar with MVC?  You will say yes!  -- And be able to explain to them the roll of each element of MVC... right???
+###Adding Views to App
+Remember, while it's not *required* to put a directory with your app's name inside your `templates` directory, it's good practice.
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/1-e0YEluJ6M" frameborder="0" allowfullscreen></iframe>
-
-Its good practice with Django to specify your app in your templates folder.
