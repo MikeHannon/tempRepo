@@ -1,6 +1,6 @@
 # Route Parameters
 
-So we have a general idea of how routing works at this point!  What about passing in variables through the route?
+We now have a general idea of how routing works! But what about passing variables through the route?
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/NWyL-UCeC1U" frameborder="0" allowfullscreen></iframe>
 
