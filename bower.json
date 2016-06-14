@@ -1,0 +1,17 @@
+{
+  "name": "djangoPart1",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Mike Hannon <mjhannon@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

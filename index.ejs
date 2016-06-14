@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+  <script src="jquery/dist/jquery.js" charset="utf-8"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+  $(document).ready(function(){
+    // console.log('hello');
+    $("div").hide();
+    $(".markdown-body").show();
+    $("button").click(function(){
+      var currentId = $(this).attr("id").substring(6);
+      console.log(currentId);
+    $("div").hide();
+    $(".markdown-body").show();
+    var target = "django"+currentId
+      $('#'+target).toggle();
+
+    })
+  })
+  </script>
+  <style>
+  button {
+    display:inline-block;
+  }
+  </style>
+  <title>Document</title>
+
+</head>
+<body>
+  Running on a harp js server, no other dependencies.
+  <h1>Django Intro</h1>
+  <button id = "button1"> Intro </button>
+  <button id = "button2"> Installation </button>
+  <button id = "button3"> Big Picture </button>
+  <button id = "button4"> Getting Started </button>
+  <button id = "button5"> Routes and Controllers </button>
+  <button id = "button6"> Templates (aka Views) </button>
+  <button id = "button7"> Assignment 1 Time Display </button>
+  <button id = "button8"> RequestForms </button>
+  <button id = "button9"> Assignment 2 Random Word Generator </button>
+  <button id = "button10"> Assignment 3 Survey Form </button>
+  <button id = "button11"> Variables to Views (Context) </button>
+  <button id = "button12"> Route Parameters </button>
+  <button id = "button13"> Assignment 4 Disappearing Ninjas </button>
+  <button id = "button14"> Assignment 5 Ninja Gold </button>
+  <div class="markdown-body">
+    <div id = "django1">
+      <%- partial("001intro" )%>
+    </div>
+    <div id = "django2">
+      <%- partial("002installation" )%>
+    </div>
+    <div id = "django3">
+      <%- partial("003Big_Picture" )%>
+    </div>
+    <div id = "django4">
+      <%- partial("004GettingGoing" )%>
+    </div>
+    <div id = "django5">
+      <%- partial("005RoutesandControllers" )%>
+    </div>
+    <div id = "django6">
+      <%- partial("006Templates(aka_MVC_Views)" )%>
+    </div>
+    <div id = "django7">
+      <%- partial("007Assignment1 TimeDisplay" )%>
+    </div>
+    <div id = "django8">
+      <%- partial("008RequestForms" )%>
+    </div>
+    <div id = "django9">
+      <%- partial("009Assignment2 Random Word Generator" )%>
+    </div>
+    <div id = "django10">
+      <%- partial("010Assignment3SurveyFormRedux" )%>
+    </div>
+    <div id = "django11">
+      <%- partial("011PassingVariablesBackToViews(Context)" )%>
+    </div>
+    <div id = "django12">
+        <%- partial("012RouteParameters" )%>
+    </div>
+    <div id = "django13">
+      <%- partial("013Assignment4 DisappearingNinjas" )%>
+    </div>
+    <div id = "django14">
+      <%- partial("014Assignment5 NinjaGold" )%>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
