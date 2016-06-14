@@ -48,3 +48,5 @@ request.session # It's a dictionary, so you can attach key/value pairs
   + Deletes a session key if it exists, throws a `keyError` if it doesn't. Use along with `try` and `except` since it's better to ask for forgiveness than permission
 + `'key' in request.session`
   + Returns a `boolean` of whether a `key` is in `session` or not
++ `{{ request.session.name }}`
+  + Use dot notation to access `request` keys in our `session` 
