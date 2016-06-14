@@ -4,18 +4,15 @@ We now have a general idea of how routing works! But what about passing variable
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/NWyL-UCeC1U" frameborder="0" allowfullscreen></iframe>
 
-##### For example, let's check out the Django Site:
-``` html
-https://docs.djangoproject.com/en/1.9/topics/http/urls/
+As an exercise in parsing documentation, let's take a look [here](https://docs.djangoproject.com/en/1.9/topics/http/urls/).
 
-```
 Notice that 1.9?  That is (most likely) a variable that can be manipulated, so that we can look at the documentations for various versions of Django, but how do we catch a variable that is in a route like this?
 
-In flask we might have had something like this:
+With Flask we might have had something like this:
 ```python
 @app.route('/en/<djangoversion>/topics/http/urls/')
-def showVersion(djangoversion):
-pass
+  def showVersion(djangoversion):
+  pass
 ```
 
 In Django it's not that different, but it is a little bit (since we are using Regular Expressions and have separated concerns (meaning we've separated our Model, Views, Controller, and Routes portions of our Django app))

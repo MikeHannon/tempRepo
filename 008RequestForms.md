@@ -13,7 +13,7 @@ Django behaves very similarly, except the property is `request.POST` if the meth
 + `request.method`
   + Returns the method/HTTP verb associated with the request
 + `{% csrf_token %}`
-  + Prevents cross-site request forgery (place it in a form on the html side of your project)
+  + Prevents cross-site request forgery (place it in a form on the HTML/template side of your project)
 
 ###Session
 Now let's set up to use session!
@@ -49,4 +49,4 @@ request.session # It's a dictionary, so you can attach key/value pairs
 + `'key' in request.session`
   + Returns a `boolean` of whether a `key` is in `session` or not
 + `{{ request.session.name }}`
-  + Use dot notation to access `request` keys in our `session` 
+  + Use dot notation (`.`) to access `request.session` keys from templates since square brackets (`[]`) aren't allowed there
