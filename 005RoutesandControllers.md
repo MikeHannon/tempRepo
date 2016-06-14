@@ -63,4 +63,6 @@ def index(request):
 ```
 
 ###MVC Overview
+This video walks through the process to render a template.
+
 <iframe width="420" height="315" src="https://www.youtube.com/embed/6wDux8ueSIA" frameborder="0" allowfullscreen></iframe>
