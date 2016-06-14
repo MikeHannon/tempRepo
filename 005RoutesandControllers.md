@@ -55,14 +55,17 @@ Let's build an `index` method inside `apps/first_app/views.py`:
 ```python
 #  Inside apps/first_app/views.py
 from django.shortcuts import render, HttpResponse
+# While Django will automatically create the request object for us that's passed into our method, HttpResponse objects are our responsibility to create and return to the browser.
+#  Note that 'render' is a shortcut method that combines a given template with a given context dictionary and returns an HttpResponse object with that rendered text.
 
 # Create your views here.
 def index(request):
   response = "Hello, I am your first request!"
   return HttpResponse(response)
+  # Not using render because we haven't created any templates yet!
 ```
 
 ###MVC Overview
-This video walks through the process to render a template.
+This video walks through the process to render a template (which belong in a `templates` directory).
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/6wDux8ueSIA" frameborder="0" allowfullscreen></iframe>
