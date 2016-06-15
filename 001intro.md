@@ -11,4 +11,4 @@ Most *ALL* enterprise level web applications are built using an MVC framework, a
 + Understand the path of an HTTP request and how the response is generated and returned within the framework
 + Understand the difference between *procedural* code and *MVC* code and the advantages of both
 + Understand how OOP works in an MVC context
-+ Build a website with MVC framework!
++ Build a website with an MVC framework!
