@@ -41,6 +41,38 @@ def index(request, djangoversion):
 Route parameters are a very common strategy to pass identifying information from the browser to the database that the user can view in the URL. For example, `localhost:8000/users/1` would allow the site user to infer the he or she is currently looking at user 1 of potentially many!  
 
 ###Static content
+Much like with Flask, Django will automatically hunt for and deliver static files as long as it's put in the right place. As you've probably guessed already, the right place in this case is a directory called `static` that lives alongside `templates`.
+
+Just like with templates, it's the convention to place another directory inside static with the same name as your app. That's because we could potentially be accessing *multiple* apps from within our own.
+
+Here's an example file structure for our Django project that focuses on the `static` files inside our `first_app`:
+
++ main
+  + apps
+    + first_app
+      + migrations
+      + static
+        + css
+          + **styles.css**
+        + js
+          + **main.js**
+      + templates
+        + first_app
+          + **index.html**
+      + urls.py
+      + views.py
+      + ...
+  + main
+
+Now, all we need to do to access static files (in this case, `main.js` and `styles.css` from template file `index.html` is to add the following to `index.html`:
+
+```html
+<!-- Inside apps/first_app/templates/first_app/index.html -->
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'first_app/css/styles.css' %}">
+<script src="{% static 'first_app/js/main.js' %}"></script>
+```
+
 <iframe width="420" height="315" src="https://www.youtube.com/embed/dH-Xxclnv1g" frameborder="0" allowfullscreen></iframe>
 
 The next assignment (Disappearing Ninjas) will test your understanding of route parameters.
