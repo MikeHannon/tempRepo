@@ -1,4 +1,4 @@
-#Disappearing Ninjas
+# Disappearing Ninjas
 This exercise will help you practice using URLs to render templates and static content.
 
 ![alt text](tmnt.png "Turtles Yo!")

@@ -1,4 +1,4 @@
-#Routing and Controllers
+# Routing and Controllers
 
 The following video reviews steps from previous tabs.
 
@@ -65,7 +65,7 @@ def index(request):
   # Not using render because we haven't created any templates yet!
 ```
 
-###MVC Overview
+### MVC Overview
 This video walks through the process to render a template (which belong in a `templates` directory).
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/6wDux8ueSIA" frameborder="0" allowfullscreen></iframe>

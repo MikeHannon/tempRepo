@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 Django installation is pretty smooth sailing:
 

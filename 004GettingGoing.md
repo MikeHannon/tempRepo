@@ -1,4 +1,4 @@
-#Let's do this Django thing!
+# Let's do this Django thing!
 
 We are going to start out with making our core project!
 

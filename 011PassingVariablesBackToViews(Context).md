@@ -1,4 +1,4 @@
-#Passing variables to templates
+# Passing variables to templates
 
 At this point, we're able to hit our routes, determine whether the method was a `GET` or a `POST`, run a method from our controller/view, and then render a template. We're still missing something: passing data back to our template via something other than `request.session`.
 
@@ -15,7 +15,7 @@ from django.shortcuts import render, HttpResponse, redirect
 
 What is **context**? It's just a dictionary that gets unpacked in the template, making all the keys variables that equal the corresponding value.
 
-###For example:
+### For example:
 ```python
 from django.shortcuts import render, HttpResponse, redirect
 

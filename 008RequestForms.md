@@ -1,11 +1,11 @@
-#Form Data
+# Form Data
 As you've already seen, getting information from a user via forms is an extremely important part of web development. When we were using Flask, we used the `form` property of the `request` object to access input values.
 
 Django behaves very similarly, except the property is `request.POST` if the method that hits the route is a post and `request.GET` if the method that hits the route is a get.
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/KRanyK02uO8" frameborder="0" allowfullscreen></iframe>
 
-###Key Terms
+### Key Terms
 + `request.POST`
   + Data from POST request
 + `request.GET`
@@ -15,7 +15,7 @@ Django behaves very similarly, except the property is `request.POST` if the meth
 + `{% csrf_token %}`
   + Prevents cross-site request forgery (place it in a form on the HTML/template side of your project)
 
-###Session
+### Session
 Now let's set up to use session!
 
 In our terminal, head to the directory where `manage.py` resides and run the following commands:
