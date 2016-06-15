@@ -24,7 +24,6 @@ urlpatterns = [
 
 Technically, the above code isn't a **method** (it's not attached to an object). But we want it to be, and we want it to live in another file. (We know that for files to communiate in Python, we use `import`.)
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/hdDa35ATofo" frameborder="0" allowfullscreen></iframe>
 
 Here's an example of the `first_app/urls.py` file that's now modularized (meaning the function/method we invoke from routes no longer lives in `urls.py`).
 
