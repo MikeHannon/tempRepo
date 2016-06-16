@@ -62,3 +62,5 @@ The second command (`migrate`) says:
 For development we are going to be using **SQLite** - a prepackaged SQL database that has much of the functionality of MySQL (but not all of it) and is stored as *local memory*.
 
 For deployment we are going to be using **postGRES**, a SQL database that has some added functionality, making it a bit heavier, but a solid deployment option. (Alternatively, with some fiddling you can also deploy a MySQL database, which is a little bit faster than postGRES).
+
+Now, how do we access our database?
