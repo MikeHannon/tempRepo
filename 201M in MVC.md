@@ -54,7 +54,7 @@ To do the equivalent of forward engineer we are going to run a couple of command
 ```
 
 The first command (`makemigrations`) tells Django:
->"Look and see if there have been any changes to the models files in our apps. If so, create the code (using built-in Django method) that represents those changes."
+>"Look and see if there have been any changes to the models files in our apps. If so, create the code (using built-in Django methods) that represents those changes."
 
 The second command (`migrate`) says:
 > **Forward engineer** those changes into our database! (I.e. turn the code generated inside a migration file into SQL commands and run those commands in local memory)
