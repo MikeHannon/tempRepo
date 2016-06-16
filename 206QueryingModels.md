@@ -1,19 +1,16 @@
-# Database Queries  In other words time to put the M into our MVC.  (We've built the models, now we need to use them!)
+#Database Queries
+###Time to put the M into our Django MTV!
+
+We've built the models, now we need to use them!
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/6C06E-Vjx34" frameborder="0" allowfullscreen></iframe>
 
-Django has a relatively easy to use Object Relationship Mapper (ORM) to help us make queries simply and cleanly.  (SO FUN!!!).  We are going to use it a little bit, but not at its full power just yet!
+Django has a relatively easy to use **Object Relationship Mapper** (ORM) to help us *make queries simply and cleanly*. You'll love it, but we won't exploit its full power just yet. Wait, why not?
 
-Why you might ask???
+1. We want you to understand how to write your own SQL queries. This will solidify a foundation of knowing how your app is interacting with the database.
 
-Well that is two fold:
+2. Hand-written queries, if done correctly, are actually *faster* than many ORMs, which levy a speed tax.
 
-1)  The first reason is that we want you to understand how to write your own queries to really help you understand database interactions.
-
-2)  Hand-written queries, if they are written correctly are actually faster than many ORMs (they avoid the ORM tax)!
-
-That being said, we are going to use some of the ORM queries right from the gun... and then expand them later, because they do make life easier.  Some people use these ORMs as follows: Create, Update and Delete = use the ORM as well as easy retrievals, but for more complicated retrievals use hand-written SQL queries.
-
-Now that I've told you this, we are going to start with the ORM. Doh!
+That said, we will user *some* ORM queries right from the start, because they certainly make life easier. Some developers rely on the ORM for creating, deleting and updating a resource, as well as for easy retrievals, but turn to hand-written SQL queries for more complicated retrievals.
 
 Let's get started!
