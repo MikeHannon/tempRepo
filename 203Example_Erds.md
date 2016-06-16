@@ -1,44 +1,43 @@
-## Django Models as ERD's
+#Django Models as ERD's
 
-Django model creations can be confusing as so much is done for us with the lack of visuals that showcase these schemas in a readable format. (At least not till we get to the Admin Portal later on in the platform.) To help ease us into the comfort of the using migrations to generate the Django Models lets look at how we would approach a few different databases and what the ERD would look like.
+Creating Django models can be confusing because so much is done for us without visual aids like the ERDs in MySQL Workbench. (Though later on we'll get to use something called an **Admin Portal** that will help us with this.)
 
-Lets look at this app:
+To help ease us into the comfort of the using migrations to generate the Django Models, let's look at how we would approach a few different databases, and what the ERD would look like.
 
+###Courses Application
 ![Courses](/mvc-courses.png "Courses")
 
 What would our ERD look like?
-We might have a name column that is a CharField, a Description that is a TextField and a created_at and updated at.
+
+We might have a `name` column that is a `CharField`, a `description` that is a `TextField`, and `created_at` and `updated_at` fields that are `DateField`'s:
 
 ![Courses DB](/mvc-courses-db.png "Courses DB")
 
 Now how would we transfer this into a Django Model? We might write something like the following:
 
 ``` python
-
+# Inside models.py
 from django.db import models
 class Courses(models.Model):
    name = models.CharField(max_length=255)
    description = models.TextField()
    created_at = models.DateTimeField(auto_now_add=True)
    updated_at = models.DateTimeField(auto_now=True)
-
 ```
 
-That is pretty straight forward. We created a name column and a description column, one with the Column_Type as a CharField and the other as a TextField. Notice how theres not an ID column or created_at or updated_at as those get created on our behalf.
+Pretty straightforward. To reiterate: We created a `name` column and a `description` column, one with the Column_Type as a `CharField` and the other as a `TextField`. But notice how there aren't `ID`, `created_at` or `updated_at` columns... *Those get created by Django on our behalf.*
 
-One cool extension is
-https://github.com/django-extensions/django-extensions
 
-(its a Django App itself - so to use it you have to add it to settings after you install it!)
+*Note: The following extension installation is advanced and not required*
+>One cool extension is [Django Extensions](https://github.com/django-extensions/django-extensions), which you can `pip install` and add to your `settings.py` file, since it's a Django App itself.
 
-Its not a necessity, but I am going to use it at the end of the video to show the ERD diagram that we generate!
-
-We are going to build the following ERD diagram in Django:
+Let's build the equivalent of the following ERD diagram in Django:
 ![Blog WireFrame](/blogs.png 'Wall')
 
-Notice the many_to_one relationship (posts are had by many users?).  Here is the equivalent django code!
-```python
+Notice the `many_to_one` relationship; *one user can be associated with many posts*. Here's the equivalent Django code:
 
+```python
+# Inside models.py
 from __future__ import unicode_literals
 
 from django.db import models
@@ -54,11 +53,12 @@ class User(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=45)
     message = models.TextField(max_length=1000)
+    # Notice the association made with ForeignKey for a one-to-many relationship
     user_id = models.ForeignKey(User)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
 ```
 
-That ForeignKey statement is the equivalent of the many_to_one relationship shown in the ERD diagram!
+**That `ForeignKey` statement is the equivalent of the one-to-many relationship shown in the ERD diagram.**
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/UHR9-964YHQ" frameborder="0" allowfullscreen></iframe>
