@@ -29,7 +29,11 @@ Pretty straightforward. To reiterate: We created a `name` column and a `descript
 
 
 *Note: The following extension installation is advanced and not required*
->One cool extension is [Django Extensions](https://github.com/django-extensions/django-extensions), which you can `pip install` and add to your `settings.py` file, since it's a Django App itself.
+One cool extension is [Django Extensions](https://github.com/django-extensions/django-extensions), which you can `pip install` and add to your `settings.py` file, since it's a Django App itself. You may need to install a few dependencies on your machine to get this working:
+1. `brew install graphviz`
+2. And within your virtual environment, `pip install pydot`
+3. Then follow the installation instructions [here](https://github.com/django-extensions/django-extensions)
+
 
 Let's build the equivalent of the following ERD diagram in Django:
 ![Blog WireFrame](/blogs.png 'Wall')
