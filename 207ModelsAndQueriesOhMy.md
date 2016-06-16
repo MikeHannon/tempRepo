@@ -43,6 +43,8 @@ def index(request):
     return HttpResponse("ok")
 
 ```
+The references to that Class (User) property objects is actually a reference to the ORM! 
+
 Setting up the ORM
 <iframe width="420" height="315" src="https://www.youtube.com/embed/tOC4y-2FBcI" frameborder="0" allowfullscreen></iframe>
 https://docs.djangoproject.com/en/1.9/topics/db/queries/
