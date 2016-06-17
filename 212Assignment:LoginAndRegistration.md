@@ -15,3 +15,4 @@ Validations - show validation error messages if validations fail above the corre
 - Password Confirmation
 Use Bcrypt to encrypt your users' passwords
 - Bonus: Birthday Field (before today, or go creative and do it in an age range)
+- Bonus: Flash Messages!: https://docs.djangoproject.com/en/1.9/ref/contrib/messages/
