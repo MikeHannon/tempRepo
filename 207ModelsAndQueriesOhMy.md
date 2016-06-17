@@ -31,24 +31,24 @@ from .models import User
 
 def index(request):
     print(User.objects.all())
-    # a list of objects (or an empty list)
+    # A list of objects (or an empty list)
     User.objects.create(first_name="mike",last_name="mike",password="1234asdf")
-    # creates a user object
+    # Creates a user object
     print(User.objects.all())
-    # a list of objects (or an empty list)
+    # A list of objects (or an empty list)
     u = User.objects.get(id=1)
     print(u.first_name)
     u.first_name = "Joey"
     u.save()
     j = User.objects.get(id=1)
     print(j.first_name)
-    # gets the User with an id of 1
+    # Gets the user with an id of 1, changes name and saves to DB, then retrieves again...
     print(User.objects.get(first_name="mike"))
-    # gets the users with a first_name of mike
+    # Gets the user with a first_name of 'mike' *** THIS MIGHT NEED TO BE CHANGED ***
     users = User.objects.raw("SELECT * from my_app_name_user")
+    # Uses raw SQL query to grab all users (equivalent to User.objects.all()), which we iterate through below
     for user in users:
-      print user
-    # gets a list of all the objects in User (equivalent to User.objects.all())
+      print user.first_name
     return HttpResponse("ok")
 ```
 
@@ -57,11 +57,11 @@ Know that this line:
 print(User.objects.raw("SELECT * from my_app_name_user"))
 ```
 
-Relies on the fact that Django builds our database's tables according to that format. If you're ever making a `raw` query and aren't sure what the table name is, you can always find it by `print`ing the following: `User._meta.db_table`
+Relies on the fact that Django builds our database's tables according to a particular format (`app_name` + `_` + `lowercase_model_name`). If you're ever making a `raw` query and aren't sure what the table name is, you can always find it by `print`ing the following: `User._meta.db_table`
 
 ###Setting up the ORM
+We *highly* recommend you work through the following guide in Django's [documentation for making queries](https://docs.djangoproject.com/en/1.9/topics/db/queries/).
 <iframe width="420" height="315" src="https://www.youtube.com/embed/tOC4y-2FBcI" frameborder="0" allowfullscreen></iframe>
-https://docs.djangoproject.com/en/1.9/topics/db/queries/
 
 ###Playing around with ORM
 <iframe width="420" height="315" src="https://www.youtube.com/embed/sC6tZzYNQyI" frameborder="0" allowfullscreen></iframe>
