@@ -1,21 +1,23 @@
-# Bcrypt, Django Style!
-In your django virtualenv
+#Bcrypt, Django Style!
+
+In your Django `virtualenv`:
+
 ```terminal
-(djangoEnv)>pip install Bcrypt
+(djangoEnv)>pip install bcrypt
 ```
 
-Here's the Bcrypt pypy doc!
+This should be getting familiar... checkout the [documentation](https://pypi.python.org/pypi/bcrypt/2.0.0)!
 
-https://pypi.python.org/pypi/bcrypt/2.0.0
 
-After you have pip installed try this!
+After you have pip installed try the following:
+
 ```terminal
 (djangoenv)>python
->>> import Bcrypt
->>> password = b"super secret password"
+>>> import bcrypt
+>>> password = "super secret password"
 >>> hashed = bcrypt.hashpw(password, bcrypt.gensalt())
->>> print (hashed)
->>> print (len(hashed))
+>>> print hashed
+>>> print len(hashed)
 >>> exit()
 ```
 Play around in the python shell a bit!
