@@ -60,8 +60,8 @@ print(User.objects.raw("SELECT * from my_app_name_user"))
 Relies on the fact that Django builds our database's tables according to a particular format (`app_name` + `_` + `lowercase_model_name`). If you're ever making a `raw` query and aren't sure what the table name is, you can always find it by `print`ing the following: `User._meta.db_table`
 
 ###Setting up the ORM
+Check out Django's [documentation for making queries](https://docs.djangoproject.com/en/1.9/topics/db/queries/).
 <iframe width="420" height="315" src="https://www.youtube.com/embed/tOC4y-2FBcI" frameborder="0" allowfullscreen></iframe>
-https://docs.djangoproject.com/en/1.9/topics/db/queries/
 
 ###Playing around with ORM
 <iframe width="420" height="315" src="https://www.youtube.com/embed/sC6tZzYNQyI" frameborder="0" allowfullscreen></iframe>
