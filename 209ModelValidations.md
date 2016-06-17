@@ -96,4 +96,4 @@ Feel free to play around with the `userManager` methods -- any change you make t
 <iframe width="420" height="315" src="https://www.youtube.com/embed/ShtXYurK_rA" frameborder="0" allowfullscreen></iframe>
 
 ####Documentation Note:
-You (hopefully) have noticed that we're sending you to the primary literature more frequently. This is intentional and important: an essential skill to hone is the ability to parse official documentation.
+You (hopefully) have noticed that we're sending you to the primary literature a bit more frequently in this chapter. This is intentional and important: an essential skill to hone is the ability to parse official documentation.
