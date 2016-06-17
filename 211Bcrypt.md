@@ -20,4 +20,4 @@ After you have pip installed try the following:
 >>> print len(hashed)
 >>> exit()
 ```
-Play around in the python shell a bit!
+Play around in the Python shell a bit!
