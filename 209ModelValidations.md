@@ -40,6 +40,9 @@ To do this we are going to have to make a new property for our `User` class and 
 
 Let's call that new class `UserManager` and add it to our previous code.
 
+####Important: Compare the objects that our `User` and `UserManager` classes are inheriting from below
+> By inheriting from `models.Model`, `User` is made into a database table. `models.Manager`, however, means our `UserManager` will inherit from the ORM.
+
 ```python
 # Inside your app's models.py file
 from __future__ import unicode_literals
