@@ -1,5 +1,6 @@
-``` python
+#Wall Model Solution
 
+``` python
 class User(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
@@ -24,4 +25,6 @@ class Comment(models.Model):
 
 ```
 
-Hopefully by now this is pretty straight forward. We have a User model that has a first_name, last_name that are CharField's email which is the EmailField, password which is another CharField, lastly created_at and updated at are created for us. Next we have a Message model who has a message that is a TextField but we also have to link this message to the user who created said message so we add the user linked through the Foreign Key. The same concepts applies to the Comments model, we create a comment field that is TextField, and we link to the user who created said comment and the message that comment is attached to.
+Hopefully this is now pretty straightforward.
+
+We're using `CharField`, `EmailField` and `TextField` for columns that will hold content like name, password, message and comment, and using `ForeignKey` to establish one-to-many relationships between `Message` + `User`, `Comment` + `User` and `Comment` + `Message`.
