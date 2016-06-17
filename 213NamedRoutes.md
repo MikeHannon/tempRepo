@@ -37,13 +37,23 @@ NOTE the argument being passed will replace the named variable in the URL - so c
 
 This is going to allow us to properly route things all the time... but what about redirects you might ask???
 
-What if we wanted to do this in our views:
+What if we wanted to do this in our views we need to grab this:
+```python
+from django.core.urlresolvers import reverse
+```
+so our views.py might look like this!
+
 `Our apps views.py`
 ```python
 from django.shortcuts import render, HttpResponse, redirect
+from django.core.urlresolvers import reverse
 
 # Create your views here.
 def index(request):
     print("hello, I am your first request")
-    return redirect('/target/this_app/new')
+    return redirect('/target/this_app/new')  
+# The Above Becomes:
+def index(request):
+    print("hello, I am your first request")
+    return redirect(reverse('my_new'))  
 ```
