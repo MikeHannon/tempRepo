@@ -53,6 +53,9 @@ To do the equivalent of forward engineer we are going to run a couple of command
 > python manage.py migrate
 ```
 
+###*Remember:*
+>**Never** delete migration files, and **always** `makemigrations` and `migrate` anytime you change something in your `models.py` files -- that's what updates the actual database so it reflects what's in your models.
+
 The first command (`makemigrations`) tells Django:
 >"Look and see if there have been any changes to the models files in our apps. If so, create the code (using built-in Django methods) that represents those changes."
 
