@@ -78,11 +78,6 @@ class User(models.Model):
     # *************************
 ```
 
-###Alert: You've just updated your model file.
-What should you do now?
-
-...a couple of terminal commands later...
-
 Now in our `views.py` file, we can use `User.userManager.login` and `.register`:
 
 ```python
