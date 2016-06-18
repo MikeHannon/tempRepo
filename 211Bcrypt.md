@@ -20,4 +20,7 @@ After you have pip installed try the following:
 >>> print len(hashed)
 >>> exit()
 ```
-Play around in the Python shell a bit!
+
+Should you run into an **encoding** error when you're hashing passwords with `bcrypt`, the following method might be useful:
+
++ [`your_string.encode()`](https://docs.python.org/3/library/stdtypes.html#str.encode)

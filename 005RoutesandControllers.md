@@ -32,7 +32,7 @@ Here's an example of the `first_app/urls.py` file that's now modularized (meanin
 from django.conf.urls import url
 from . import views # This line is new!
 urlpatterns = [
-  url(r'^$', views.index, name = "index") # This line has changed!
+  url(r'^$', views.index) # This line has changed!
 ]
 ```
 
@@ -42,11 +42,11 @@ Let's break our `urls.py` file down:
   + This gives us access to the variable `url` (which points to a function)
 + `from . import views`
   + This gives us access to everything in a `views.py` file that Django automatically created for us when we built our `first_app`
-+ `url(r'^$', views.index, name = 'index')`
++ `url(r'^$', views.index)`
   + Uses the `url` method in a way that's very similar to the `@app.route` method in `flask`. The `r` after the `(` identifies the following string to match as a *regular expression* pattern.
   + In this case, it will exactly match an empty string. That means if you were to go to `localhost:8000/`, Django (after removing the `'/'` automatically) will check if anything matches.
   + In this case it does! An empty string is what `r'^$'` looks for. Since the pattern matches, we run the `views.index` method.
-  + That leaves `name = 'index'` as the only thing we haven't yet discussed. At this point *don't worry about this piece* -- we will get into **named urls** in a bit.
+  + `url()` will eventually take another parameter, something like `name='index'`, which we'll introduce when we talk about **named routes**.
 + Note that, unlike a `flask` route where there is an HTTP method (e.g. "GET" and/or "POST"), Django doesn't care. We (the developer) figure that out in the method by accessing `request.method` in our function.
 
 Let's build an `index` method inside `apps/first_app/views.py`:

@@ -25,7 +25,7 @@ from . import views
 # this urlpatterns list is the key, and Django uses regular expressions to match routes!
 # r'^$' -- is the equivalent of '/'. Django is smart and knows that all routes need '/'
 urlpatterns = [
-    url(r'^$', views.index, name = 'index'),
+    url(r'^$', views.index),
     # So our root route ('/') is directing our app to a method called index in our views.py files...
 ]
 ```

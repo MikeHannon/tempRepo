@@ -7,7 +7,7 @@ Here's one potential routing structure you can use before we layer on prebuilt m
 
 ```python
 # Inside your app's urls.py file
-url(r('^users', views.index, name="index"))
+url(r'^users', views.index)
 ```
 
 ###Flask-Style Validations
@@ -77,11 +77,6 @@ class User(models.Model):
     objects = models.Manager()
     # *************************
 ```
-
-###Alert: You've just updated your model file.
-What should you do now?
-
-...a couple of terminal commands later...
 
 Now in our `views.py` file, we can use `User.userManager.login` and `.register`:
 
