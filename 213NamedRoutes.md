@@ -1,6 +1,6 @@
 #Named Routes
 
-**Named routes** make referencing your Django app's routes pretty easy. All we name to do is pass a keyword variable (`name`) to the `url` method we use inside our app's `urls.py` file. For example:
+**Named routes** make referencing your Django app's routes pretty easy. All we need to do is pass a keyword variable (`name`) to the `url` method we use inside our app's `urls.py` file. For example:
 
 ```python
 # Inside your app's urls.py file
