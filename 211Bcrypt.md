@@ -21,6 +21,6 @@ After you have pip installed try the following:
 >>> exit()
 ```
 
-Should you run into an encoding error when you're hashing passwords, the following method might be useful:
+Should you run into an **encoding** error when you're hashing passwords with `bcrypt`, the following method might be useful:
 
-+ [`your_string.encode('utf-8')`](https://docs.python.org/3/library/stdtypes.html#str.encode)
++ [`your_string.encode()`](https://docs.python.org/3/library/stdtypes.html#str.encode)
