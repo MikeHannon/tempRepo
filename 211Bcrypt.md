@@ -24,4 +24,3 @@ After you have pip installed try the following:
 Should you run into an encoding error when you're hashing passwords, the following method might be useful:
 
 + [`your_string.encode('utf-8')`](https://docs.python.org/3/library/stdtypes.html#str.encode)
-s
