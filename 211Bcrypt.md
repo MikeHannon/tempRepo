@@ -11,7 +11,7 @@ https://pypi.python.org/pypi/bcrypt/2.0.0
 After you have pip installed try this!
 ```terminal
 (djangoenv)>python
->>> import Bcrypt
+>>> import bcrypt
 >>> password = b"super secret password"
 >>> hashed = bcrypt.hashpw(password, bcrypt.gensalt())
 >>> print (hashed)
