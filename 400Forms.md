@@ -26,8 +26,9 @@ class RegisterForm(forms.Form):
     password = forms.CharField(max_length=100, widget=forms.PasswordInput)
     confirm_password = forms.CharField(max_length=100,widget=forms.PasswordInput)
 ```
+In our views (controller) file
+views.py
 
-- views.py
 ```python
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
@@ -38,8 +39,8 @@ def index(request):
   context = {"regForm":form}
   return render(request("this_app.index.html", context))
 ```
-
-- index.html
+In our index page!
+index.html
 ```html
 <body>
   <form class="" action="/register" method="post">
