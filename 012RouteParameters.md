@@ -23,7 +23,7 @@ In Django it's not that different, but we do have to become a bit more familiar 
 from django.conf.urls import url
 from . import views
 urlpatterns = [
-    url(r'^/en/(?P<djangoversion>[0-9]\.[0-9])/topics/http/urls/$', views.index, name = "index")
+    url(r'^/en/(?P<djangoversion>[0-9]\.[0-9])/topics/http/urls/$', views.index)
 ]
 ```
 This above pattern tells us that we will pass to our `views.py` file's `index` method a keyword argument of `djangoversion` that will match *exactly* a number 0 through 9, followed by `.`, and then another number 0 through 9. So our views might look something like this for that route pattern:

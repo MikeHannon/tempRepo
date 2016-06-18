@@ -1,9 +1,9 @@
-# Named routes - Finally!
+#Named Routes
 
-Named routes make referencing django app routes easy!  Let's take a look at a few examples:
+**Named routes** make referencing your Django app's routes pretty easy. For example:
 
-` Our apps urls.py file `
 ```python
+# Inside your app's urls.py file
 from django.conf.urls import url
 from . import views
 urlpatterns = [

@@ -7,7 +7,7 @@ Here's one potential routing structure you can use before we layer on prebuilt m
 
 ```python
 # Inside your app's urls.py file
-url(r('^users', views.index, name="index"))
+url(r'^users', views.index)
 ```
 
 ###Flask-Style Validations
