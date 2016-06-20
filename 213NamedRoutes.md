@@ -17,7 +17,7 @@ urlpatterns = [
 
 Now we can more easily reference those routes from inside our app's templates:
 
-*NOTE*: `target/` in the example below is what gets caught by our main project's `urls.py`
+*NOTE*: `target/` in the examples below is what gets caught by our main project's `urls.py`
 
 ```html
 <!-- Inside your app's index.html file -->
