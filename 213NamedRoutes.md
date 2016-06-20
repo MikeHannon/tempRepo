@@ -31,7 +31,7 @@ Now we can more easily reference those routes from inside our app's templates:
 </form>
 
 <!-- is the equivalent of: -->
-<form class="" action="{%url 'my_delete', id=5 %}" method="post">
+<form class="" action="{%url 'my_delete' id=5 %}" method="post">
   <input type="submit" value="Submit">
 </form>
 ```
