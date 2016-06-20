@@ -26,7 +26,12 @@ class RegisterForm(forms.Form):
     password = forms.CharField(max_length=100, widget=forms.PasswordInput)
     confirm_password = forms.CharField(max_length=100,widget=forms.PasswordInput)
 ```
+That widget flag on the passwords... that thing just adjusts the default type of input field!  
+
+Learn more? Search for django widgets!
+
 In our views (controller) file
+
 views.py
 
 ```python

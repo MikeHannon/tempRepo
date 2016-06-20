@@ -24,9 +24,26 @@ views.py
 ```python
   def register(request):
     myform = RegistrationForm()
-    myformbound = RegistrationForm(request.)
     # this is the method that is running in response to that form submission
     if request.methods == "POST":
+      # here we bind our form to the request.POST info!
+      myformbound = RegistrationForm(request.POST)
       print myformbound.is_valid() # this prints true or false based on the validations that were set!
       print myformbound.errors # this prints the errors in this form as a dictionary.
 ```
+
+Now, if only we could connect a form to a model...oh right, we can!
+
+```python
+from django import forms
+# assumes that we have a model!
+from .models import User
+
+class RegisterForm(forms.ModelForm):
+  class Meta:
+      model = User
+      fields = '__all__'
+```
+The above code generates a RegisterForm for our User model!
+
+https://docs.djangoproject.com/en/1.9/topics/forms/modelforms/#modelform
