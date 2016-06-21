@@ -1,11 +1,13 @@
-# Now that we can create forms using prebuilt Django Methods - what else can we do with them?
+#Form Validation
 
-It turns out that the form instances don't just generate HTML, they also validate the data that come back!
+We can create forms using prebuilt Django methods. Now let's validate them!
 
-At this point, we are already Level: 2!  So we'll just work through a few things and then you can add forms to your views.py and templates (controllers and views) as you see fit!
+Just a reminder that this is already Level II content, meaning you have more than enough in your tool belt to pass the belt exam. These topics are for you to integrate as you see fit.
 
-Imagine we start with this form
+Imagine we create the following form:
+
 ```python
+# Inside your apps forms.py file
 from django import forms
 
 class RegisterForm(forms.Form):
@@ -16,34 +18,45 @@ class RegisterForm(forms.Form):
     confirm_password = forms.CharField(max_length=100,widget=forms.PasswordInput)
 ```
 
-In our view, let's say that we just got post data back from inputs into this form.
+Now let's imagine a user submitted information into this form that we rendered to the browser (see the previous section if you're unclear on how to do this).
 
-We can then make a call in out to our form in that controller.
+Our `views.py` file now gets hit with the HTTP request and `POST` data, which our `urls.py` directs to the `register` function.
 
-views.py
+Now the cool part: We can instantiate a form and test the data we received against our validations!
+
 ```python
+# Inside your app's views.py file
+# This is the method that is running in response to that form submission
   def register(request):
+    # First instantiate a form based on the class we created in forms.py
     myform = RegistrationForm()
-    # this is the method that is running in response to that form submission
+
+    # Next confirm that the HTTP verb was a POST
     if request.methods == "POST":
-      # here we bind our form to the request.POST info!
-      myformbound = RegistrationForm(request.POST)
-      print myformbound.is_valid() # this prints true or false based on the validations that were set!
-      print myformbound.errors # this prints the errors in this form as a dictionary.
+      # Bind the POST data to an instance of our RegisterForm
+      bound_form = RegistrationForm(request.POST)
+      # Now test that bound_form using built-in methods!
+      # *************************
+      print bound_form.is_valid() # True or False, based on the validations that were set!
+      print bound_form.errors # Any errors in this form as a dictionary
+      # *************************
 ```
 
-Now, if only we could connect a form to a model...oh right, we can!
+We can *really* streamline things by connecting the form to a model!
 
 ```python
+# inside your app's forms.py file
 from django import forms
+
 # assumes that we have a model!
 from .models import User
+# ****************************
 
 class RegisterForm(forms.ModelForm):
   class Meta:
       model = User
       fields = '__all__'
 ```
-The above code generates a RegisterForm for our User model!
+The above code generates a `RegisterForm` for our `User` model!
 
-https://docs.djangoproject.com/en/1.9/topics/forms/modelforms/#modelform
+Here's the [documentation](https://docs.djangoproject.com/en/1.9/topics/forms/modelforms/#modelform) to review.
