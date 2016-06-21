@@ -47,3 +47,21 @@ class RegisterForm(forms.ModelForm):
 The above code generates a RegisterForm for our User model!
 
 https://docs.djangoproject.com/en/1.9/topics/forms/modelforms/#modelform
+
+In the next assignment we are going to write some of our own model validations as well.  Here's a quick example of the setup:
+
+In our app.models.py
+```python
+from django.core.exceptions import ValidationError
+# our validator
+def validateLengthGreaterThanTwo(value):
+    if len(value)< 3:
+        raise ValidationError(
+            '{} must be longer than: 2'.format(value)
+        )
+class User(models.Model):
+    first_name = models.CharField(max_length=45, validators = [validateLengthGreaterThanTwo])
+    last_name = models.CharField(max_length=45, validators = [validateLengthGreaterThanTwo])
+```
+
+So if we had a from for our User class... (intentional ellipses)
