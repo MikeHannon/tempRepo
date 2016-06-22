@@ -35,7 +35,10 @@ def makeMessages(request):
   "error3": "Third error"
   }
   for key,error in errors.iteritems():
-    messages.errors(request, error)
+    # The messages object has a number of tags (including error)
+    messages.error(request, error)
+    # above we add to the error tags
+    # the message object will be held until the next rendering event, so you can redirect, just now instead of rendering.
   return render(request, "showErrors.html")
 ```
 
