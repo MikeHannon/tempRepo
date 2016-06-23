@@ -44,7 +44,7 @@ Let's say I added a `mh_user` app, which is my fully customized login and regist
 
 ```python
 # From inside one of your app's models.py file
-from apps.mh_user.models import User
+from '''Path to mh_users's models.py file''' import User
 ```
 
-(`User` is accessable because we added it to our main project's `settings.py` file. Told you that step was important!)
+(`User` is accessible because we added it to our main project's `settings.py` file. Told you that step was important!)
