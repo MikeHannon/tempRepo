@@ -80,4 +80,4 @@ class User(models.Model):
     last_name = models.CharField(max_length=45, validators = [validateLengthGreaterThanTwo])
 ```
 
-So if we had a from for our User class... (intentional ellipses)
+So if we had a form for our `User` class... (intentional ellipses)
