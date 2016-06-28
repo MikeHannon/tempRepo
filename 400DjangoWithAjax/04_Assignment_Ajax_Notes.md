@@ -9,7 +9,7 @@ Look at the image below and ask yourself how many forms you might need for the a
 If you said 3, we're on the same page:
 
 1. Form for creating a note
-2. For every note, a form for updating that note's information (title, description)
+2. For every note, a form for creating/updating that note's description
   + Extra challenge: implement this feature without showing a submit `button`
 3. For every note, a form for deleting that note
 
