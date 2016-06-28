@@ -19,7 +19,7 @@ $('form').submit(function(e){
 
 > If you haven't seen the `.serialize()` method, it's just a helpful way to create a text string that our server can easily parse.
 
-Pause for a moment to really think about the following: You just added some JavaScript to take care of an HTTP request/response on the front-end; at this point *you haven't changed a single line of code on the server-side*. Remember: The server **doesn't care** whether a request is initiated via your browser's address bar, an HTML `<form>` submission or an Ajax request.
+Pause for a moment to really think about the following: You just added some JavaScript to take care of an HTTP request/response on the front-end; at this point *you haven't changed a single line of code on the server-side*. Remember: The server **doesn't care** whether a request is initiated via your browser's address bar, an HTML `<form>` submission or an Ajax method.
 
 Likewise, we didn't change any of the HTML that our server rendered! The `<form>` is still created the same as before (the example repo uses Django's `forms.ModelForm` feature).
 
