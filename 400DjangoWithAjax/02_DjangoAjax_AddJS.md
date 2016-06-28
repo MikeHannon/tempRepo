@@ -1,8 +1,12 @@
 #Introducing JavaScript
 
-In the previous tab, you built (probably pretty quickly!) an app to create and view posts. That activity was meant to get you to notice a problem we've already mentioned: Every time we add a post, the page refreshes in order to display the most up-to-date posts.
+In the previous tab, you built (probably pretty quickly!) an app to create and view posts. That activity was meant to get you to notice a problem we've already mentioned:
 
-That's bad user experience. Let's step in with some JavaScript (we'll use `jQuery`/`$` for its super easy syntax -- either download a local copy or link to CDN) and stop our form from issuing an HTTP request when submitted.
+> Every time we add a post, the page refreshes in order to display the most up-to-date posts.
+
+That's generally considered poor user experience, so let's step in with some JavaScript.
+
+We'll use `jQuery`/`$` for its super easy syntax -- either download a local copy or link to CDN -- and stop our `<form>` from issuing an HTTP request when submitted.
 
 All we really need to do is update the code in our `template` file:
 
@@ -23,6 +27,7 @@ All we really need to do is update the code in our `template` file:
   <body>
     <h1>Posts</h1>
     <div class="posts">
+      <!-- posts is fed to the template via a context dictionary (see app's views.py file for details) -->
       {% for post in posts %}
       <div class="post">
         <p>{{post.description}}</p>
@@ -56,18 +61,18 @@ One of the most important techniques for building modern web apps, Ajax requests
 
 We could create these requests with [vanilla JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), but it's relatively tedious compared to a build-in `ajax` method that jQuery gives us:
 
-Let's invoke that method (attached to the `$` object) and pass it an object describing the type of request we'd like it to initialize. Take a look at the incomplete code below and see if you can fill in the missing pieces before moving to the next tab. This [documentation](http://api.jquery.com/jquery.ajax/) might be helpful.
+Let's invoke that method (attached to the `$` object) and pass it an object describing the type of request we'd like it to initialize.
+
+Take a look at the incomplete code below and see if you can fill in the missing pieces before moving to the next tab. This [documentation](http://api.jquery.com/jquery.ajax/) might be helpful.
 
 ```js
 $('form').submit(function(e){
   e.preventDefault()
-
   $.ajax({
     url: /* Where should this go? */,
     method: /* Which HTTP verb? */,
     data: /* Any data to send along? */,
     success: /* What code should we run when the server responds? */
   })
-
 })
 ```
