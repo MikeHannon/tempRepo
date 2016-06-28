@@ -125,6 +125,7 @@ That's all it takes! Hopefully you can see the power of using Ajax requests to g
 4. `post` method creates new post and `redirects` back to routes
 5. Routes catch a `GET` route to `/posts` and directs to `Posts`'s `get` method
 6. `get` method returns a rendered template to the browser
-7. Callback function pinned to the `success` key runs with the server response passed in as an argument and updates DOM.
+
+Finally, the callback function pinned to the `success` key runs with the server response passed in as an argument and updates DOM.
 
 ![AjaxProcess](ajax_process.png)
