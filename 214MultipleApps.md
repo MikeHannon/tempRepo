@@ -44,7 +44,8 @@ Let's say I added a `mh_user` app, which is my fully customized login and regist
 
 ```python
 # From inside one of your app's models.py file
-from '''Path to mh_users's models.py file''' import User
+from '''Relative Path to mh_users's models.py file''' import User
 ```
+This relative path is often ..**nameofapp**.models.  The .. says go up one folder from where you are currently sitting.
 
 (`User` is accessible because we added it to our main project's `settings.py` file. Told you that step was important!)
