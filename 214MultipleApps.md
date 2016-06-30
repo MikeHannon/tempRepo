@@ -42,7 +42,9 @@ One last thing to note: You can pull in an app and use a model from that app in 
 
 Let's say I added a `mh_user` app, which is my fully customized login and registration, to my project. In my `quotes` app, I could go into my model (or anywhere in my project for that matter) and add:
 
+
 ```python
+
 # From inside one of your app's models.py file
 from '''Relative Path to mh_users's models.py file''' import User
 ```
