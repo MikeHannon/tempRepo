@@ -73,4 +73,36 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 ```
-Let's look at the Comment class.  An instance of the Comment class has two pointers to other objects. The pointers' names are user which points to a User object instance, and message which points to a Message object instance.  So just like in the linked list example, we could say something like: CommentInstance.message.message.  The first message is the pointer to the message object.  The second message is the actual message property of the message object.  (To slightly clarify this )
+Let's look at the Comment class.  An instance of the Comment class has two pointers to other objects. The pointers' names are user which points to a User object instance, and message which points to a Message object instance.  So just like in the linked list example, we could say something like: CommentInstance.message.message.  The first message is the pointer to the message object.  The second message is the actual message property of the message object.  (To slightly clarify this if we changed the property 'message' in our Message class to "donutflavor" to get the donutflavor associated with a specific comment we'd go CommentInstance.message.donutflavor).  In plainer English, this says we have an instance of a comment, that has a pointer to a message object.  That message object has a number of properties/pointers, one of which is this donutflavor, which we are then accessing.  This logic works great when a pointer is pointing at a specific object (like we discussed above, but what if we want to get all of specific message's comments).  A Messageinstance doesn't have a pointer to all the comments...  ENTER DJANGO!
+
+Django has 3 major relationship types and deals with these things for us!  
+
+### One to one
+ This makes an imaginary property IN THE OBJECT THAT THE ONE_TO_ONE relationship is not defined in, in addition to the real property in the object that the relationship IS defined in.  So if we had a one_to_one relationship in an object e.g.
+
+```python
+class User(models.Model):
+  first_name = models.CharField(max_length=45)
+
+class CustomUserId(models.Model):
+  newId = models.IntegerField()
+  specificUser = models.OneToOneField(User)
+
+```
+Here a userObject has a customUserId as well as a customUserId having a specificuser property.
+If we want to change the way we reference that artificially generated key, we could change our model like this:
+```python
+class User(models.Model):
+  first_name = models.CharField(max_length=45)
+
+class CustomUserId(models.Model):
+  newId = models.IntegerField()
+  specificUser = models.OneToOneField(User, related_name="myId")
+```
+Now the Userobject would reference the CustomUserId objects by userObject.myId (and then maybe .newId if you wanted to get that integer stored in newId)
+
+### One to many
+One side of the one to many behaves just like the one_to_one relationship, and we described it above.  But how does django deal with the opposite direction relationship, e.g. users who can create many messages in our wall model above?  
+
+
+Many to many
