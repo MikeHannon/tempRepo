@@ -19,6 +19,8 @@ and it return a user object(if there is one) that matches those parameters.
 
 To clarify: it returns either a user object or none... So you can make an conditional logic statement based on this (e.g. if ...)
 
+### Note: you have to authenticate a user prior to login a user in using the Django auth. model!
+
 The login function takes a user object, extracts the id and sets a request variable named request.user (this is set in session).
 
 ```python
