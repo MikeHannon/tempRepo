@@ -11,7 +11,7 @@ The reccomended way to install Debug Toolbar is via pip:
 $ pip install django-debug-toolbar
 ```
 
-Add `'debug.toolbar'` to your `INSTALLED_APPS in your settings.py folder.
+Add `'debug_toolbar'` to your `INSTALLED_APPS in your settings.py folder.
 
 ```python
 INSTALLED_APPS = (

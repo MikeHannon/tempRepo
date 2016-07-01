@@ -99,10 +99,29 @@ class CustomUserId(models.Model):
   newId = models.IntegerField()
   specificUser = models.OneToOneField(User, related_name="myId")
 ```
+
 Now the Userobject would reference the CustomUserId objects by userObject.myId (and then maybe .newId if you wanted to get that integer stored in newId)
 
 ### One to many
-One side of the one to many behaves just like the one_to_one relationship, and we described it above.  But how does django deal with the opposite direction relationship, e.g. users who can create many messages in our wall model above?  
 
+One side of the one to many behaves just like the one_to_one relationship, and we described it above.  But how does django deal with the opposite direction relationship, e.g. going from a User object to the **set** of messages or comments?  Well Django has provided us a tool: Lower_case class name followed by _set = access to the set of objects of the related key.
 
-Many to many
+```python
+Userobject.message_set.all()
+```
+
+The above code would retrieve all of the messages associated with that particular user object.  Much like with a OneToOneField, we can set a related name.  If we do, the message_set piece of code would be replaced with related name.  This is of particular use when you have Class that joins to the same class more than once.  (Since classname_set would not know which of the associations you are talking about!)
+
+### Many to many
+
+Our last common relationship in Django: The many to many relationship.  In this relationship both directions of the relationship are sets!  The example that Django uses is Pizzas and Toppings.  Any pizza can have many toppings, and any topping can be on many pizzas.  We strive to place the many to many where it makes the most sense.  In this case we'd set the relationship in pizzas, such that we could do
+```python
+pizzaObject.toppings.all()
+```
+versus
+```python
+pizzaObject.toppings_set.all()
+```
+but either direction requires the secondary call.
+
+This is one of those topics that can take a bit to wrap our heads around.  Making projects that have these relationships in them can really help!
