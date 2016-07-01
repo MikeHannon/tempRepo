@@ -1,5 +1,5 @@
 # Assignment: Doing The Walk Through, Time Required: 3 hrs
-At this point, you should be feeling pretty comfortable with a fair amount of the core pieces of Django.  Great Work!  It might seem weird that we'd be pointing you at the Django Tutorial this late, but there are some great nuggets of info in here that you might otherwise miss if we'd have had you start with Django!
+At this point, you should be feeling pretty comfortable with a fair amount of the core pieces of Django.  Great Work!  It might seem weird that we'd be pointing you at the Django Tutorial this late, but there are some great nuggets of info in here that you might otherwise miss if we'd have had you start with this.
 
 Some things to note:
 ### The tutorial does a few things differently:
