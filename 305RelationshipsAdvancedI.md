@@ -110,11 +110,42 @@ One side of the one to many behaves just like the one_to_one relationship, and w
 Userobject.message_set.all()
 ```
 
-The above code would retrieve all of the messages associated with that particular user object.  Much like with a OneToOneField, we can set a related name.  If we do, the message_set piece of code would be replaced with related name.  This is of particular use when you have Class that joins to the same class more than once.  (Since classname_set would not know which of the associations you are talking about!)
+The above code would retrieve all of the messages associated with that particular user object.  Much like with a OneToOneField, we can set a related name.  If we do, the message_set piece of code would be replaced with related name.
+
+``` python
+class User(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField()
+    password = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+class Message(models.Model):
+    message = models.TextField()
+    user = models.ForeignKey(User, related_name="messages")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Comment(models.Model):
+    comment = models.TextField()
+    user = models.ForeignKey(User)
+    message = models.ForeignKey(Message)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+```
+
+This is of particular use when you have Class that joins to the same class more than once.  (Since classname_set would not know which of the associations you are talking about!)
+Given the above model, note the related_name ('messages') now in our Message class?  Now a user object can reference messages not through message_set, but through that related name: messages.
+```python
+User.object.messages.all()
+```
 
 ### Many to many
 
 Our last common relationship in Django: The many to many relationship.  In this relationship both directions of the relationship are sets!  The example that Django uses is Pizzas and Toppings.  Any pizza can have many toppings, and any topping can be on many pizzas.  We strive to place the many to many where it makes the most sense.  In this case we'd set the relationship in pizzas, such that we could do
+
 ```python
 pizzaObject.toppings.all()
 ```

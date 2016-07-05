@@ -34,7 +34,7 @@ Now we can restart our server and use session:
 request.session # It's a dictionary, so you can attach key/value pairs
 ```
 
-*Errata note: In the video we (I, MH) say `session` behaves the same as it does in Flask. This is not true! Session in Django gets saved even if you leave the browser!*
+*Errata note: In the video we (I, MH) say `session` behaves the same as it does in Flask. This is not true! Session in Django gets saved even if we leave the browser!*
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/8ZTVGCoEyFs" frameborder="0" allowfullscreen></iframe>
 

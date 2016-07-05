@@ -51,15 +51,15 @@ from django.db import models
 class UserManager(models.Manager):
     def login(self, email, password):
         print "Running a login function!"
-        print "If successful login occurs, pass back a tuple with (True, user))"
-        print "If unsuccessful, return a tuple with (False, 'Login unsuccessful')"
+        print "If successful login occurs, maybe return a tuple with (True, user) where user is a user object?)"
+        print "If unsuccessful, maybe return a tuple with (False, 'Login unsuccessful')"
         pass
 
     def register(self, **kwargs):
-        # What the heck is this **kwargs business? That's for you to find out...
+        # What the heck is this **kwargs business? That's for you to find out... (we don't need to user kwargs, we just can...)
         print ("Register a user here")
-        print ("If successful pass back a tuple with (True, user))")
-        print ("If unsuccessful return a tuple with (False, 'Registration unsuccessful')")
+        print ("If successful, maybe return a tuple with (True, user) where user is a user object?)"
+        print ("If unsuccessful return maybe return a (False, 'Registration unsuccessful')")
         pass
 
 
