@@ -15,7 +15,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=45)
     password = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(auto_now = True)s
+    updated_at = models.DateTimeField(auto_now = True)
 ```
 
 Now let's take a look at our `views.py` file (and in the back of our minds know that this is the **controller** piece of MVC architecture).

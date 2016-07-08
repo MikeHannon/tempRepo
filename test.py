@@ -1,14 +1,17 @@
-
+import json
 class ListNode(object):
-  def __init__(self,val):
-    self.val = val
-    self.next = None
+    def __init__(self,val):
+        self.val = val
+        self.next = None
+    def __str__(self):
+        return json.dumps(self.__dict__)
 
 class CustomNode(object):
   def __init__(self,val,*bonus):
     self.val = val
     self.next = None
     self.bonus = bonus
+
 
 class LinkedList(object):
   def __init__(self):

@@ -73,7 +73,8 @@ class User(models.Model):
     # *************************
     # Connect an instance of UserManager to our User model!
     userManager = UserManager()
-    # Re-adds objects as a manager
+
+    # Re-adds objects as a manager (so all the normal ORM literature matches)
     objects = models.Manager()
     # *************************
 ```
